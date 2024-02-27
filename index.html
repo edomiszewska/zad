@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+
+    <title>zadanko</title>
+    
+</head>
+<body>
+    
+<div>
+    <button value="foreach" class="foreach">foreach</button>
+    <button value="map" class="map">map</button>
+    <button value="filter" class="filter">filter</button>
+    <button value="reduce" class="reduce">reduce</button>
+</div>
+
+<p class="pole"></p>
+
+    <script>
+        //tablcia liczb
+        //3 przyciski z 3metodami (foreach wypisujacy nr elementu)
+        //filter ktore sa parzyste
+        //reduce wyswietli sume wszystkich el z tabklicy
+        //mapy = el*2 kazdy el
+
+
+        const foreach=document.querySelector('.foreach')
+        const map=document.querySelector('.map')
+        const filter=document.querySelector('.filter')
+        const reduce=document.querySelector('.reduce')
+        const pole=document.querySelector('.pole')
+        let i=0
+        const tab=[1,2,3,4,5,6]
+        foreach.addEventListener('click', function(){
+        tab.forEach((el) => {
+            pole.innerHTML+="numer "+ i + " wartość "+el+'<br>'
+            i++
+            
+        })});
+
+        
+        map.addEventListener('click', function(){
+        const tab2 = tab.map(el => el * 2);
+        pole.innerHTML(tab2)}); 
+
+        const evenNumbers = tab.filter(el => el % 2 === 0);
+
+        pole.innerHTML(evenNumbers); //[2, 4, 6]
+
+
+
+    </script>
+</body>
+</html>
